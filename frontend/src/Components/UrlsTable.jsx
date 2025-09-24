@@ -81,7 +81,7 @@ const [refresh, setRefresh] = useState(false);
       <Table.Td>{element.originalUrl}</Table.Td>
       <Table.Td>
         <a
-          href={`http://localhost:3000/api/url/${element.shortCode}`}
+          href={`https://url-shortner-bmvo.onrender.com/api/url/${element.shortCode}`}
           target="_blank"
           rel="noopener noreferrer"
              onClick={() =>{setRefresh(prev => !prev); }}
