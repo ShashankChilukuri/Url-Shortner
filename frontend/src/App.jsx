@@ -6,19 +6,23 @@ import './index.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { HeaderMegaMenu } from './Components/Navbar/HeaderMegaMenu';
 import Profile from './Pages/Profile';
+import UrlShortner from './Pages/UrlShortner';
+import MyUrls from './Pages/MyUrls';
 
 function App() {
   return (
     <Router>
-        <HeaderMegaMenu/>
-        <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path='/login' element={<LoginPage/>} />
-            <Route element={<PrivateRoute/>}>
+      <HeaderMegaMenu />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/url/shortner' element={<UrlShortner />} />
+        <Route path='/url/all' element={<MyUrls/>} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route element={<PrivateRoute />}>
 
-            </Route>
-        </Routes>
+        </Route>
+      </Routes>
     </Router>
   )
 }
