@@ -18,7 +18,7 @@ export const createShortUrl = async (req, res) => {
      const exist = ShortURL.findOne({
        shortCode,
      });
-     if (exist) {
+     if (!exist) {
        console.log("This shortCode already exist");
        return res.status(400).send({
          message: "Please try another shortCode",

@@ -13,7 +13,7 @@ export default function UrlForm(props) {
     let ser = new Service();
     const generateUrl = async (data) => {
         try{
-           
+        //    console.log(data)
          let res=await ser.post("url", data)
         //  console.log(res)
             props.setResponse(res)
