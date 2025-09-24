@@ -10,7 +10,7 @@ export default function UrlsTable() {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [deleting, setDeleting] = useState(null);
-
+const [refresh, setRefresh] = useState(false);
   // Edit modal state
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editData, setEditData] = useState({ shortCode: "", originalUrl: "", title: "" });
@@ -30,7 +30,7 @@ export default function UrlsTable() {
 
   useEffect(() => {
     getData(activePage, 10);
-  }, [activePage]);
+  }, [activePage,refresh]);
 
   const handleDeleteClick = async (shortCode) => {
     if (window.confirm(`Are you sure you want to delete the short URL: ${shortCode}?`)) {
@@ -84,6 +84,7 @@ export default function UrlsTable() {
           href={`http://localhost:3000/api/url/${element.shortCode}`}
           target="_blank"
           rel="noopener noreferrer"
+             onClick={() =>{setRefresh(prev => !prev); }}
         >
           {element.shortCode}
         </a>

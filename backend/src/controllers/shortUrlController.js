@@ -68,7 +68,7 @@ export const getLongUrl = async (req, res) => {
        console.log("Short code not found");
        res.status(404).send({ message : "BAD_REQUEST"});
    }
-
+ await exist.updateOne({ $inc: { clickCount: 1 } });
    return res.redirect(exist.originalUrl); // by default the status code is 302
    // return res.redirect(301,exist.originalUrl);
 
